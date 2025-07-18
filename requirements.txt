@@ -1,0 +1,47 @@
+# Dynamic Sales Analyzer - Requirements
+# Core data processing
+pandas>=1.5.0
+numpy>=1.20.0
+
+# Visualization
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+# File format support
+openpyxl>=3.0.0          # Excel files (.xlsx, .xls)
+tabula-py>=2.5.0         # PDF table extraction  
+pdfplumber>=0.7.0        # PDF text and table parsing
+xlrd>=2.0.0              # Legacy Excel support
+
+# OCR and Image Processing (optional)
+pytesseract>=0.3.0       # OCR text extraction from images
+Pillow>=9.0.0            # Image processing
+opencv-python>=4.5.0     # Advanced image preprocessing
+
+# Text processing and fuzzy matching
+fuzzywuzzy>=0.18.0       # Fuzzy string matching for column names
+python-Levenshtein>=0.12.0  # Fast string distance calculations
+
+# Configuration and utilities  
+PyYAML>=6.0              # YAML configuration files
+configparser>=5.0.0      # INI configuration files
+pathlib>=1.0.0           # Path handling utilities
+
+# Database connectivity (optional)
+sqlalchemy>=1.4.0        # Database connections
+psycopg2-binary>=2.9.0   # PostgreSQL support
+pymysql>=1.0.0           # MySQL support
+
+# Cloud and API integrations (optional)
+boto3>=1.20.0            # AWS services integration
+google-cloud-vision>=2.0.0  # Google Cloud OCR
+azure-cognitiveservices-vision-computervision>=0.9.0  # Azure OCR
+
+# Development and testing
+pytest>=7.0.0            # Testing framework
+black>=22.0.0            # Code formatting
+flake8>=4.0.0            # Code linting
+
+# Performance optimization
+numba>=0.56.0            # JIT compilation for numeric operations
+dask>=2022.0.0           # Parallel computing for large datasets
