@@ -250,10 +250,6 @@ The system follows a modular, class-based architecture:
 - **Scalable**: Tested with datasets up to 10M+ rows
 - **Robust**: Comprehensive error handling and graceful degradation
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
 ### Development Setup
 
 ```bash
@@ -272,10 +268,6 @@ black dynamic_sales_analyzer.py
 flake8 dynamic_sales_analyzer.py
 ```
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🎯 Roadmap
 
 ### Current Version (v1.0)
@@ -293,27 +285,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - 🔄 Interactive web dashboard
 - 🔄 API service deployment
 - 🔄 Cloud platform integration
-
-### Future Enhancements
-
-- Database connectors (PostgreSQL, MySQL, MongoDB)
-- Advanced visualization options
-- Custom analysis templates
-- Multi-language support
-- Enterprise authentication
-
-## 📞 Support
-
-- 📧 **Email**: [your.email@domain.com](mailto:your.email@domain.com)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/yourusername/dynamic-sales-analyzer/issues)
-- 📖 **Documentation**: [Wiki](https://github.com/yourusername/dynamic-sales-analyzer/wiki)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/yourusername/dynamic-sales-analyzer/discussions)
-
-## 🌟 Acknowledgments
-
-- Built with the powerful [pandas](https://pandas.pydata.org/) data analysis library
-- Inspired by real-world enterprise data analysis challenges
-- Thanks to the open-source community for excellent tools and libraries
 
 ---
 
