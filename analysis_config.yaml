@@ -1,0 +1,148 @@
+# Dynamic Sales Data Analyzer - Configuration
+# This file defines the analysis configuration templates and column mappings
+
+analysis_templates:
+  # Default sales analysis template
+  sales_analysis:
+    name: "Sales Performance Analysis"
+    description: "Comprehensive sales performance analysis with trend and regional insights"
+
+    # Column mapping with fuzzy matching support
+    required_columns:
+      date_column:
+        possible_names:
+          ["date", "transaction_date", "sale_date", "day", "period", "time"]
+        data_type: "datetime"
+        required: true
+
+      revenue_column:
+        possible_names:
+          [
+            "revenue",
+            "sales",
+            "amount",
+            "total",
+            "income",
+            "earnings",
+            "value",
+            "price",
+          ]
+        data_type: "numeric"
+        required: true
+
+    optional_columns:
+      sales_rep_column:
+        possible_names:
+          [
+            "sales_rep",
+            "salesperson",
+            "rep",
+            "agent",
+            "employee",
+            "staff",
+            "seller",
+          ]
+        data_type: "categorical"
+        required: false
+
+      region_column:
+        possible_names:
+          [
+            "region",
+            "territory",
+            "area",
+            "location",
+            "zone",
+            "district",
+            "state",
+          ]
+        data_type: "categorical"
+        required: false
+
+      deals_column:
+        possible_names:
+          [
+            "deals",
+            "transactions",
+            "sales_count",
+            "orders",
+            "contracts",
+            "qty",
+            "quantity",
+          ]
+        data_type: "numeric"
+        required: false
+
+      customer_type_column:
+        possible_names:
+          [
+            "customer_type",
+            "client_type",
+            "account_type",
+            "segment",
+            "category",
+          ]
+        data_type: "categorical"
+        required: false
+
+      product_column:
+        possible_names:
+          ["product", "service", "item", "sku", "category", "type"]
+        data_type: "categorical"
+        required: false
+
+    # Data cleaning rules
+    cleaning_rules:
+      remove_negative_revenue: true
+      remove_duplicates: true
+      standardize_dates: true
+      handle_missing_values: "interpolate" # Options: drop, interpolate, fill_zero, fill_mean
+      outlier_detection: "iqr" # Options: none, iqr, zscore, isolation_forest
+      outlier_action: "flag" # Options: remove, flag, cap
+
+    # Analysis configuration
+    analysis_config:
+      trend_analysis: true
+      regional_analysis: true
+      performance_ranking: true
+      summary_statistics: true
+      correlation_analysis: true
+      seasonal_analysis: true
+
+    # Visualization preferences
+    visualization_config:
+      chart_style: "seaborn-whitegrid"
+      color_palette: "husl"
+      save_charts: true
+      interactive_charts: false
+      chart_formats: ["png", "svg"]
+
+# File format specific configurations
+file_format_config:
+  csv:
+    encoding_detection: true
+    delimiter_detection: true # Auto-detect comma, semicolon, tab, etc.
+    quote_char_detection: true
+
+  excel:
+    auto_detect_sheets: true
+    header_row_detection: true
+    skip_empty_rows: true
+
+  pdf:
+    table_extraction_method: "lattice" # Options: lattice, stream, both
+    multiple_pages: true
+    table_detection_threshold: 0.8
+
+  image:
+    ocr_engine: "tesseract" # Options: tesseract, cloud_vision, aws_textract
+    preprocessing: true # Image enhancement before OCR
+    table_structure_detection: true
+
+# Data quality thresholds
+data_quality_config:
+  minimum_rows: 5
+  maximum_missing_percentage: 50
+  minimum_columns: 2
+  duplicate_threshold: 0.1 # Flag if >10% duplicates
+  outlier_threshold: 0.05 # Flag if >5% outliers
